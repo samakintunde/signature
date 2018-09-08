@@ -5,12 +5,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <title>Signature Maker</title>
 </head>
 
 <body>
-  <canvas></canvas>
+  <header class="brand">
+    <h1>Signature Maker</h1>
+  </header>
+  <nav class="info">
+    <span>
+      <i class="fas fa-bars"></i>
+    </span>
+    <div>
+      <div class="social">
+        <a href="https://github.com/samakintunde37" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com/samakintunde37" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://behance.net/samakintunde37" target="_blank">
+          <i class="fab fa-behance"></i>
+        </a>
+        <a href="https;//instagram.com/samakintunde37" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+      <p>Built by <a href="https://samakintunde.design">Samuel Akintunde</a></p>
+      <p class="copyright">&copy;2018 All Rights Reserved.</p>
+    </div>
+  </nav>
+  <canvas id="canvas" width="680" height="540">
+    You're seeing this because this browser is probably from the Stone Age or you don't have Javascript enabled.
+  </canvas>
+  <div class="actions">
+    <div class="options">
+      <div class="presets">
+        <label for="presets">Presets: </label>
+        <select name="presets" id="presets">
+          <option value="signature">Signature</option>
+          <option value="doodle-red">Doodle Red</option>
+          <option value="doodle-yellow">Doodle Yellow</option>
+          <option value="doodle-green">Doodle Green</option>
+          <option value="doodle-blue">Doodle Blue</option>
+          <option value="crazy">Crazy</option>
+        </select>
+      </div>
+      <div class="color">
+        <label for="color-well">Color: </label>
+        <input type="color" value="#000000" id="color"></input>
+      </div>
+      <div class="width">
+        <label for="stroke-width">Stroke: </label>
+        <input type="number" name="stroke-width" id="stroke-width" min="0" value="10">
+      </div>
+    </div>
+    <div class="download">
+      <button id="download-button">Download as Image</button>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>

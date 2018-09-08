@@ -1,3 +1,169 @@
 * {
   margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: Karla, Montserrat, helvetica, san-serif;
+  background-color: #3f3f3f;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+a,
+select {
+  outline: none;
+  border: none;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #3a3a97;
+}
+
+/* Logo */
+header.brand {
+  position: fixed;
+  max-width: max-content;
+  top: 1em;
+  left: 1em;
+  padding: 0.25em 0.5em;
+  background-color: #fa8072;
+  border-radius: 0.25em;
+}
+
+/* Navigation */
+nav.info {
+  position: fixed;
+  right: -14.3em;
+  top: 1em;
+  /* background-color: #5f9ea0; */
+  border-radius: 0.25em;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+nav.info:hover {
+  transform: translateX(-14.3em);
+}
+
+nav.info span {
+  cursor: pointer;
+  position: absolute;
+  padding: 0.5em;
+  top: 0;
+  left: -1.85em;
+  background-color: #f75d4c;
+  border-radius: 0.25em 0 0 0.25em;
+}
+
+nav.info > i.fas {
+  font-size: 1.25em;
+}
+
+nav.info > div {
+  display: inline-block;
+  padding: 0.5em;
+  background-color: #f75d4c;
+  height: 100%;
+}
+
+nav.info div.social {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 1em;
+}
+
+nav.info div.social a {
+  margin: 0.25em;
+  font-size: 1.25em;
+}
+
+nav.info div.social a:hover {
+  color: #3a3a97;
+}
+
+nav.info p:nth-child(n + 1) {
+  padding-top: 0.5em;
+}
+
+nav.info p:nth-child(2n + 1) {
+  font-size: 0.75em;
+}
+
+/* Canvas area */
+canvas {
+  margin: 2em auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.75);
+}
+
+div.actions {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  background-color: #000000;
+}
+
+/* Settings and dials */
+div.options {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.options input[type="color"] {
+  background-color: transparent;
+  padding: 0;
+}
+
+div.options input[type="color"]:hover {
+  cursor: pointer;
+}
+
+div.options input[type="number"] {
+  width: 3em;
+}
+
+/* Download */
+div.download {
+  /* text-align: center; */
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+div.download button {
+  width: 100%;
+  height: 100%;
+  padding: 1em 2em;
+  font-weight: 600;
+  font-size: 1.5em;
+  font-family: inherit;
+  background-color: #3a3a97;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+div.download button:hover {
+  background-color: #242481;
+  transform: scale(1.25);
 }
