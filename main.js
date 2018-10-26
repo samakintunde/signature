@@ -28,17 +28,63 @@ class Preset {
     this.strokeWidth = width;
     this.strokeStyle = color;
   }
+  setPreset() {
+    if (e.target.value === "signature") {
+      ctx.lineWidth = signaturePreset.strokeWidth;
+      ctx.strokeStyle = signaturePreset.strokeStyle;
+      strokeInput.value = signaturePreset.strokeWidth;
+      colorWell.value = signaturePreset.strokeStyle;
+    }
+  }
 }
 
 let signaturePreset = new Preset(3, "#000000");
-console.log(signaturePreset);
+let redDoodle = new Preset(10, "#ff0000");
+let blueDoodle = new Preset(10, "#0000ff");
+let yellowDoodle = new Preset(10, "#ffff00");
+let greenDoodle = new Preset(10, "#00ff55");
 
 const presets = document.getElementById("presets");
+const strokeInput = document.querySelector("input[type=number]");
+let hue = 0;
 
-presets.addEventListener("select", () => {
-  console.log(presets.value);
-  if ((presets.value = "signature")) {
-    strokeWidth, (strokeStyle = { signaturePreset });
+presets.addEventListener("change", e => {
+  if (e.target.value === "signature") {
+    ctx.lineWidth = signaturePreset.strokeWidth;
+    ctx.strokeStyle = signaturePreset.strokeStyle;
+    strokeInput.value = signaturePreset.strokeWidth;
+    colorWell.value = signaturePreset.strokeStyle;
+  }
+  if (e.target.value === "doodle-red") {
+    ctx.lineWidth = redDoodle.strokeWidth;
+    ctx.strokeStyle = redDoodle.strokeStyle;
+    strokeInput.value = redDoodle.strokeWidth;
+    colorWell.value = redDoodle.strokeStyle;
+  }
+  if (e.target.value === "doodle-green") {
+    ctx.lineWidth = greenDoodle.strokeWidth;
+    ctx.strokeStyle = greenDoodle.strokeStyle;
+    strokeInput.value = greenDoodle.strokeWidth;
+    colorWell.value = greenDoodle.strokeStyle;
+  }
+  if (e.target.value === "doodle-blue") {
+    ctx.lineWidth = blueDoodle.strokeWidth;
+    ctx.strokeStyle = blueDoodle.strokeStyle;
+    strokeInput.value = blueDoodle.strokeWidth;
+    colorWell.value = blueDoodle.strokeStyle;
+  }
+  if (e.target.value === "doodle-yellow") {
+    ctx.lineWidth = yellowDoodle.strokeWidth;
+    ctx.strokeStyle = yellowDoodle.strokeStyle;
+    strokeInput.value = yellowDoodle.strokeWidth;
+    colorWell.value = yellowDoodle.strokeStyle;
+  }
+  if (e.target.value === "crazy") {
+    ctx.strokeStyle = `hsl(${hue}, 100%, 100%)`;
+    ctx.lineWidth = strokeWidth;
+    strokeInput.style.display = "none";
+    colorWell.style.display = "none";
+    setInterval(() => hue++, 100);
   }
 });
 
