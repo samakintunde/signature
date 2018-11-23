@@ -120,4 +120,23 @@ canvas.addEventListener("mouseout", () => {
   isDrawing = false;
 });
 
-// const downloadBtn = document.getElementById("download-button");
+// DOWNLOAD SIGNATURE
+const downloadBtn = document.getElementById("download-button");
+
+downloadBtn.addEventListener("click", () => {
+  // Create an anchor element so we can set the download name
+  const link = document.createElement("a");
+  link.download = "signature.png";
+  let imageUrl = canvas
+    .toDataURL("image/png")
+    .replace("image/png", "image/octet-stream");
+  link.href = imageUrl;
+  link.click();
+});
+
+// CLEAR CANVAS
+const clearBtn = document.getElementById("clear-button");
+
+clearBtn.addEventListener("click", () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
