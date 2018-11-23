@@ -143,6 +143,21 @@ div.options input[type="number"] {
   width: 3em;
 }
 
+div.options button#clear-button {
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.25em;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: red;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+div.options div.clear-canvas button#clear-button:hover {
+  background-color: darkred;
+}
+
 /* Download */
 div.download {
   /* text-align: center; */
